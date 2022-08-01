@@ -9,3 +9,7 @@ output "private_subnets_id" {
 output "security_groups_id" {
   value = [for sec in var.security_groups : aws_security_group.sec_groups[sec.name].id]
 }
+
+output "elastic_ip" {
+  value = aws_eip.elastic_ip.public_ip
+}
